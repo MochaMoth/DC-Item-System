@@ -11,18 +11,17 @@ public struct GameData
 }
 
 [Serializable]
-public struct WeaponDataTable
-{
-    public WeaponData weaponData;
-}
+public class WeaponDataDictionary : ReorderableArray<WeaponData> { }
 
 [Serializable]
-public class WeaponDataDictionary : ReorderableArray<WeaponDataTable> { }
+public class AddonDataDictionary : ReorderableArray<StatData> { }
 
 [Serializable]
 public struct PlayerInfo
 {
     [Reorderable]
     public WeaponDataDictionary weaponInventory;
+    [Reorderable]
+    public AddonDataDictionary addonInventory;
 }
 #endregion

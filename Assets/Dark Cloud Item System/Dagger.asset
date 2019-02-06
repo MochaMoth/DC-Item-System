@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d7b341e55a4154d9568df90657ab8d, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
-  itemName: 
   data:
     stats:
       baseItemName: Dagger
@@ -21,9 +20,6 @@ MonoBehaviour:
       speed: 70
       magic: 2
       healthPower: 48
-      baseAbs: 32
-      absPerLevel: 8
-      addonSlots: 2
       fire: 0
       ice: 0
       thunder: 0
@@ -39,6 +35,11 @@ MonoBehaviour:
       metal: 0
       mimic: 0
       mage: 0
+    addons:
+      array: []
+    baseAbs: 32
+    absPerLevel: 8
+    addonSlots: 2
     currentHealth: 48
     currentExperience: 0
     currentLevel: 1

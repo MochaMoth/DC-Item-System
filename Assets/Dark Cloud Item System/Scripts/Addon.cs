@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Addon : Item
 {
-    //
+    public StatData stats;
 }

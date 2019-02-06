@@ -36,6 +36,5 @@ public class StatData
 
 public class Item : ScriptableObject
 {
-    //Sets item's default stats. these values will change in game before being stored into data.
-    public string itemName;
+    //
 }
