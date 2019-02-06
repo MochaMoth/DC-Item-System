@@ -3,53 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AddonUIButton : MonoBehaviour
+public class WeaponModifySlot : MonoBehaviour
 {
-    public Addon myAddon;
-    public int myIndex;
-    public WeaponModifySlot modifySlot;
+    public Weapon myItem;
+    public Image myImage;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(Click);
-        modifySlot = FindObjectOfType<WeaponModifySlot>();
-    }
-
-    public void Initialize(Addon item, int index)
-    {
-        myAddon = item;
-        myIndex = index;
     }
 
     public void Click()
     {
         UIMouseFollow follow = FindObjectOfType<UIMouseFollow>();
 
-        if (myAddon == null)
+        if (myItem == null)
         {
             if (follow.myItem != null)
             {
                 try
                 {
-                    myAddon = (Addon)follow.myItem;
-                    modifySlot.myItem.data.addons[myIndex] = myAddon.stats;
+                    myItem = (Weapon)follow.myItem;
+                    myImage.sprite = myItem.sprite;
                     follow.RemoveItem();
                 }
-                catch
+                catch (System.InvalidCastException)
                 {
-                    Debug.Log("follow Item not an Addon");
+                    Debug.Log("follow Item not a Weapon");
                     return;
                 }
             }
         }
         else
         {
-            follow.AssignItem(myAddon);
-            modifySlot.myItem.data.addons[myIndex] = new StatData();
-            myAddon = null;
+            follow.AssignItem(myItem);
+            myItem = null;
+            myImage.sprite = null;
         }
 
         FindObjectOfType<AddonsController>().OnEnable();
         FindObjectOfType<StatController>().OnEnable();
+    }
+
+    public void LevelUp()
+    {
+        if (myItem != null)
+        {
+            myItem.data.LevelUp();
+            FindObjectOfType<AddonsController>().OnEnable();
+            FindObjectOfType<StatController>().OnEnable();
+        }
     }
 }

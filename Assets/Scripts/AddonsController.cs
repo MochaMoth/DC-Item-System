@@ -7,10 +7,23 @@ public class AddonsController : MonoBehaviour
 {
     public GameObject backgroundImages;
     public GameObject foregroundButtons;
+    public WeaponModifySlot modifySlot;
 
     public void OnEnable()
     {
-        WeaponData weapon = GameController.Instance.gameData.playerInfo.weaponInventory[0];
+        modifySlot = FindObjectOfType<WeaponModifySlot>();
+        if (modifySlot.myItem == null)
+        {
+            for (int i = 0; i < backgroundImages.transform.childCount; i++)
+            {
+                backgroundImages.transform.GetChild(i).gameObject.SetActive(false);
+                foregroundButtons.transform.GetChild(i).gameObject.SetActive(false);
+            }
+
+            return;
+        }
+
+        WeaponData weapon = modifySlot.myItem.data;
 
         for (int i = 0; i < backgroundImages.transform.childCount; i++)
         {

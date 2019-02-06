@@ -37,6 +37,12 @@ public class WeaponData
     public float Mimic       { get { float ret = stats.mimic;       foreach (StatData addon in addons) { ret += addon.mimic;       } return ret; } }
     public float Mage        { get { float ret = stats.mage;        foreach (StatData addon in addons) { ret += addon.mage;        } return ret; } }
 
+    public WeaponData()
+    {
+        stats = new StatData();
+        addons = new AddonDataDictionary();
+    }
+
     public void LevelUp()
     {
         currentLevel++;

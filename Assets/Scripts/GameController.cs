@@ -7,8 +7,19 @@ public class GameController : MonoBehaviour
     [Header("References")]
     public ItemDatabase itemDatabase;
     public GameData gameData;
+    public int inventorySize = 30;
 
     static GameController instance;
+
+    private void Awake()
+    {
+        for (int i = 0; i < inventorySize; i++)
+        {
+            InventoryPair empty = new InventoryPair { id = -1 };
+            if (gameData.playerInfo.inventory.Count <= i)
+                gameData.playerInfo.inventory.Add(empty);
+        }
+    }
 
     public static GameController Instance
     {

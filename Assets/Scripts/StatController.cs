@@ -12,7 +12,14 @@ public class StatController : MonoBehaviour
     {
         //TODO: Update to be dynamic
         Dictionary<string, float> stats = new Dictionary<string, float>();
-        WeaponData data = GameController.Instance.gameData.playerInfo.weaponInventory[0];
+        WeaponModifySlot modifySlot = FindObjectOfType<WeaponModifySlot>();
+        WeaponData data;
+
+        if (modifySlot.myItem == null)
+            data = new WeaponData();
+        else
+            data = modifySlot.myItem.data;
+
         stats.Add("Level", data.currentLevel);
         stats.Add("Attack", data.Attack);
         stats.Add("Endurance", data.Endurance);
