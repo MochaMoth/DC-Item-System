@@ -22,7 +22,6 @@ public class AddonUIButton : MonoBehaviour
     public void Click()
     {
         UIMouseFollow follow = FindObjectOfType<UIMouseFollow>();
-        Debug.Log("Click!");
 
         if (myAddon == null)
         {
