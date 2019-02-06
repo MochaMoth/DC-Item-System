@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d7b341e55a4154d9568df90657ab8d, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 61298e0fa61860240aac46bc5a0e5e76, type: 3}
   data:
     stats:
       baseItemName: Dagger
@@ -36,7 +37,49 @@ MonoBehaviour:
       mimic: 0
       mage: 0
     addons:
-      array: []
+      array:
+      - baseItemName: 
+        attack: 0
+        endurance: 0
+        speed: 0
+        magic: 0
+        healthPower: 0
+        fire: 0
+        ice: 0
+        thunder: 0
+        wind: 0
+        holy: 0
+        dragon: 0
+        undead: 0
+        marine: 0
+        rock: 0
+        plant: 0
+        beast: 0
+        sky: 0
+        metal: 0
+        mimic: 0
+        mage: 0
+      - baseItemName: 
+        attack: 0
+        endurance: 0
+        speed: 0
+        magic: 0
+        healthPower: 0
+        fire: 0
+        ice: 0
+        thunder: 0
+        wind: 0
+        holy: 0
+        dragon: 0
+        undead: 0
+        marine: 0
+        rock: 0
+        plant: 0
+        beast: 0
+        sky: 0
+        metal: 0
+        mimic: 0
+        mage: 0
     baseAbs: 32
     absPerLevel: 8
     addonSlots: 2

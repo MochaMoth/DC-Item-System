@@ -18,4 +18,11 @@ public class GameController : MonoBehaviour
             return instance;
         }
     }
+
+    public void LevelUpWeapon()
+    {
+        gameData.playerInfo.weaponInventory[0].LevelUp();
+        FindObjectOfType<StatController>().OnEnable();
+        FindObjectOfType<AddonsController>().OnEnable();
+    }
 }

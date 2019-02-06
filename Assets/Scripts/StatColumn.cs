@@ -10,7 +10,7 @@ public class StatColumn : MonoBehaviour
     public void Initialize(Dictionary<string, float> stats)
     {
         foreach (Transform child in transform)
-            DestroyImmediate(child.gameObject);
+            Destroy(child.gameObject);
 
         foreach (KeyValuePair<string, float> stat in stats)
         {

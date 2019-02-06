@@ -23,6 +23,15 @@ public class ItemDatabase : ScriptableObject
         return items[index];
     }
 
+    public Item GetItem(string itemName)
+    {
+        foreach (Item item in items)
+            if (item.name == itemName)
+                return item;
+
+        return ErrorItem(string.Format("Item '{0}' does not exist in this directory. Returning empty item instead.", itemName));
+    }
+
     public int GetItemIndex(Item item)
     {
         for (int i = 0; i < items.Count; i++)

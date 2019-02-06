@@ -36,5 +36,5 @@ public class StatData
 
 public class Item : ScriptableObject
 {
-    //
+    public Sprite sprite;
 }

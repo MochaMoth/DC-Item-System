@@ -8,7 +8,7 @@ public class StatController : MonoBehaviour
     public StatColumn magicStatsColumn;
     public StatColumn antiStatsColumn;
 
-    private void OnEnable()
+    public void OnEnable()
     {
         //TODO: Update to be dynamic
         Dictionary<string, float> stats = new Dictionary<string, float>();

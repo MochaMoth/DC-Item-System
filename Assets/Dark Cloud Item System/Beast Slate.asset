@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530b7a6e6a9ac864981a93bf2ce037b8, type: 3}
   m_Name: Beast Slate
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 61298e0fa61860240aac46bc5a0e5e76, type: 3}
   stats:
     baseItemName: Beast Slate
     attack: 0

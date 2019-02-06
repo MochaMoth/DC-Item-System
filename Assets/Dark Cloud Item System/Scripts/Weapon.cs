@@ -36,39 +36,39 @@ public class WeaponData
     public float Metal       { get { float ret = stats.metal;       foreach (StatData addon in addons) { ret += addon.metal;       } return ret; } }
     public float Mimic       { get { float ret = stats.mimic;       foreach (StatData addon in addons) { ret += addon.mimic;       } return ret; } }
     public float Mage        { get { float ret = stats.mage;        foreach (StatData addon in addons) { ret += addon.mage;        } return ret; } }
+
+    public void LevelUp()
+    {
+        currentLevel++;
+        
+        stats.attack      = Attack;
+        stats.endurance   = Endurance;
+        stats.speed       = Speed;
+        stats.magic       = Magic;
+        stats.healthPower = HealthPower;
+        stats.fire        = Fire;
+        stats.ice         = Ice;
+        stats.thunder     = Thunder;
+        stats.wind        = Wind;
+        stats.holy        = Holy;
+        stats.dragon      = Dragon;
+        stats.undead      = Undead;
+        stats.marine      = Marine;
+        stats.rock        = Rock;
+        stats.plant       = Plant;
+        stats.beast       = Beast;
+        stats.sky         = Sky;
+        stats.metal       = Metal;
+        stats.mimic       = Mimic;
+        stats.mage        = Mage;
+
+        for (int i = 0; i < addons.Count; i++)
+            addons[i] = new StatData();
+    }
 }
 
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Items/Weapon")]
 public class Weapon : Item
 {
     public WeaponData data;
-
-    public void LevelUp()
-    {
-        data.currentLevel++;
-        
-        data.stats.attack      = data.stats.attack      + data.Attack;
-        data.stats.endurance   = data.stats.endurance   + data.Endurance;
-        data.stats.speed       = data.stats.speed       + data.Speed;
-        data.stats.magic       = data.stats.magic       + data.Magic;
-        data.stats.healthPower = data.stats.healthPower + data.HealthPower;
-        data.stats.fire        = data.stats.fire        + data.Fire;
-        data.stats.ice         = data.stats.ice         + data.Ice;
-        data.stats.thunder     = data.stats.thunder     + data.Thunder;
-        data.stats.wind        = data.stats.wind        + data.Wind;
-        data.stats.holy        = data.stats.holy        + data.Holy;
-        data.stats.dragon      = data.stats.dragon      + data.Dragon;
-        data.stats.undead      = data.stats.undead      + data.Undead;
-        data.stats.marine      = data.stats.marine      + data.Marine;
-        data.stats.rock        = data.stats.rock        + data.Rock;
-        data.stats.plant       = data.stats.plant       + data.Plant;
-        data.stats.beast       = data.stats.beast       + data.Beast;
-        data.stats.sky         = data.stats.sky         + data.Sky;
-        data.stats.metal       = data.stats.metal       + data.Metal;
-        data.stats.mimic       = data.stats.mimic       + data.Mimic;
-        data.stats.mage        = data.stats.mage        + data.Mage;
-
-        for (int i = 0; i < data.addons.Count; i++)
-            data.addons[i] = new StatData();
-    }
 }
