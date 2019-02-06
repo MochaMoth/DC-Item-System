@@ -20,9 +20,16 @@ public class AddonsController : MonoBehaviour
                 foregroundButtons.transform.GetChild(i).gameObject.SetActive(true);
 
                 if (!string.IsNullOrEmpty(weapon.addons[i].baseItemName))
-                    backgroundImages.transform.GetChild(i).GetComponent<Image>().sprite = GameController.Instance.itemDatabase.GetItem(weapon.addons[i].baseItemName).sprite;
+                {
+                    Addon addon = (Addon)GameController.Instance.itemDatabase.GetItem(weapon.addons[i].baseItemName);
+                    backgroundImages.transform.GetChild(i).GetComponent<Image>().sprite = addon.sprite;
+                    foregroundButtons.transform.GetChild(i).GetComponent<AddonUIButton>().Initialize(addon, i);
+                }
                 else
+                {
                     backgroundImages.transform.GetChild(i).GetComponent<Image>().sprite = null;
+                    foregroundButtons.transform.GetChild(i).GetComponent<AddonUIButton>().Initialize(null, i);
+                }
             }
             else
             {
