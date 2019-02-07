@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c50808a8a5ed124f9b9899768814784, type: 3}
   m_Name: Dagger Synth Sphere
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 61298e0fa61860240aac46bc5a0e5e76, type: 3}
   stats:
-    baseItemName: 
+    baseItemName: Dagger Synth Sphere
     attack: 0
     endurance: 0
     speed: 0

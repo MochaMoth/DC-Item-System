@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 208658654}
   - component: {fileID: 208658653}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Background Images
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2082,108 +2082,11 @@ MonoBehaviour:
   gameData:
     playerInfo:
       inventory:
-        array:
-        - itemType: 0
-          id: 0
-        - itemType: 1
-          id: 0
+        array: []
       weaponInventory:
-        array:
-        - stats:
-            baseItemName: Dagger
-            attack: 6
-            endurance: 30
-            speed: 70
-            magic: 2
-            healthPower: 48
-            fire: 0
-            ice: 0
-            thunder: 0
-            wind: 4
-            holy: 0
-            dragon: 0
-            undead: 0
-            marine: 0
-            rock: 0
-            plant: 0
-            beast: 4
-            sky: 0
-            metal: 0
-            mimic: 0
-            mage: 0
-          addons:
-            array:
-            - baseItemName: Beast Slate
-              attack: 0
-              endurance: 0
-              speed: 0
-              magic: 0
-              healthPower: 0
-              fire: 0
-              ice: 0
-              thunder: 0
-              wind: 0
-              holy: 0
-              dragon: 0
-              undead: 0
-              marine: 0
-              rock: 0
-              plant: 0
-              beast: 4
-              sky: 0
-              metal: 0
-              mimic: 0
-              mage: 0
-            - baseItemName: 
-              attack: 0
-              endurance: 0
-              speed: 0
-              magic: 0
-              healthPower: 0
-              fire: 0
-              ice: 0
-              thunder: 0
-              wind: 0
-              holy: 0
-              dragon: 0
-              undead: 0
-              marine: 0
-              rock: 0
-              plant: 0
-              beast: 0
-              sky: 0
-              metal: 0
-              mimic: 0
-              mage: 0
-          baseAbs: 32
-          absPerLevel: 8
-          addonSlots: 2
-          currentHealth: 48
-          currentExperience: 0
-          currentLevel: 1
+        array: []
       addonInventory:
-        array:
-        - baseItemName: Beast Slate
-          attack: 0
-          endurance: 0
-          speed: 0
-          magic: 0
-          healthPower: 0
-          fire: 0
-          ice: 0
-          thunder: 0
-          wind: 0
-          holy: 0
-          dragon: 0
-          undead: 0
-          marine: 0
-          rock: 0
-          plant: 0
-          beast: 4
-          sky: 0
-          metal: 0
-          mimic: 0
-          mage: 0
+        array: []
   inventorySize: 30
 --- !u!1 &584722168
 GameObject:
@@ -4459,6 +4362,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1763164817}
         m_MethodName: LevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 589220628}
+        m_MethodName: UpdateStatus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8890,7 +8804,7 @@ GameObject:
   - component: {fileID: 1894638646}
   - component: {fileID: 1894638645}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: Foreground Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9533,6 +9447,7 @@ GameObject:
   - component: {fileID: 2023400591}
   - component: {fileID: 2023400590}
   - component: {fileID: 2023400589}
+  - component: {fileID: 2023400592}
   m_Layer: 5
   m_Name: Bottom Buttons Panel
   m_TagString: Untagged
@@ -9574,12 +9489,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 5
-    m_Right: 5
+    m_Left: 10
+    m_Right: 10
     m_Top: 5
     m_Bottom: 5
   m_ChildAlignment: 4
-  m_Spacing: 5
+  m_Spacing: 10
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -9621,6 +9536,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023400587}
   m_CullTransparentMesh: 0
+--- !u!114 &2023400592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023400587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
 --- !u!1 &2026750791
 GameObject:
   m_ObjectHideFlags: 0
@@ -10357,7 +10286,7 @@ GameObject:
   - component: {fileID: 2129738147}
   - component: {fileID: 2129738146}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Weapon Slot Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

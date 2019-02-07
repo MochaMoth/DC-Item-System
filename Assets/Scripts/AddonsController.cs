@@ -32,6 +32,9 @@ public class AddonsController : MonoBehaviour
                 backgroundImages.transform.GetChild(i).gameObject.SetActive(true);
                 foregroundButtons.transform.GetChild(i).gameObject.SetActive(true);
 
+                if (weapon.addons.Count <= i)
+                    weapon.addons.Add(new StatData());
+
                 if (!string.IsNullOrEmpty(weapon.addons[i].baseItemName))
                 {
                     Addon addon = (Addon)GameController.Instance.itemDatabase.GetItem(weapon.addons[i].baseItemName);
