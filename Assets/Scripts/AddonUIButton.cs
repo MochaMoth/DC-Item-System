@@ -44,9 +44,12 @@ public class AddonUIButton : MonoBehaviour
         }
         else
         {
-            follow.AssignItem(myAddon);
-            modifySlot.myItem.data.addons[myIndex] = new StatData();
-            myAddon = null;
+            if (follow.myItem == null)
+            {
+                follow.AssignItem(myAddon);
+                modifySlot.myItem.data.addons[myIndex] = new StatData();
+                myAddon = null;
+            }
         }
 
         FindObjectOfType<AddonsController>().OnEnable();
