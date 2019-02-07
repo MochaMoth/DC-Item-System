@@ -47,11 +47,11 @@ public class WeaponData
     {
         currentLevel++;
         
-        stats.attack      = Attack;
-        stats.endurance   = Endurance;
-        stats.speed       = Speed;
-        stats.magic       = Magic;
-        stats.healthPower = HealthPower;
+        stats.attack      = Attack + 1;
+        stats.endurance   = Endurance + 1;
+        stats.speed       = Speed + 1;
+        stats.magic       = Magic + 1;
+        stats.healthPower = HealthPower + 1;
         stats.fire        = Fire;
         stats.ice         = Ice;
         stats.thunder     = Thunder;

@@ -35,6 +35,7 @@ public class AddonsController : MonoBehaviour
                 if (!string.IsNullOrEmpty(weapon.addons[i].baseItemName))
                 {
                     Addon addon = (Addon)GameController.Instance.itemDatabase.GetItem(weapon.addons[i].baseItemName);
+                    addon.stats = weapon.addons[i];
                     backgroundImages.transform.GetChild(i).GetComponent<Image>().sprite = addon.sprite;
                     foregroundButtons.transform.GetChild(i).GetComponent<AddonUIButton>().Initialize(addon, i);
                 }

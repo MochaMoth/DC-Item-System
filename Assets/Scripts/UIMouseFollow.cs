@@ -26,6 +26,7 @@ public class UIMouseFollow : MonoBehaviour
 
     public void AssignItem(Item item)
     {
+        //myItem = Instantiate(item);
         myItem = item;
         sprite.sprite = item.sprite;
     }

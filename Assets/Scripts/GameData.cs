@@ -50,12 +50,12 @@ public struct PlayerInfo
         switch (pair.itemType)
         {
             case ItemType.Addon:
-                Addon addon = (Addon)GameController.Instance.itemDatabase.GetItem(addonInventory[pair.id].baseItemName);
+                Addon addon = UnityEngine.Object.Instantiate((Addon)GameController.Instance.itemDatabase.GetItem(addonInventory[pair.id].baseItemName));
                 addon.stats = addonInventory[pair.id];
                 return addon;
 
             case ItemType.Weapon:
-                Weapon weapon = (Weapon)GameController.Instance.itemDatabase.GetItem(weaponInventory[pair.id].stats.baseItemName);
+                Weapon weapon = UnityEngine.Object.Instantiate((Weapon)GameController.Instance.itemDatabase.GetItem(weaponInventory[pair.id].stats.baseItemName));
                 weapon.data = weaponInventory[pair.id];
                 return weapon;
         }
@@ -119,6 +119,20 @@ public struct PlayerInfo
 
             inventory[index] = newPair;
         }
+    }
+
+    public bool AddToInventory(Item item)
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i].id == -1)
+            {
+                SetItemInInventory(i, item);
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 #endregion

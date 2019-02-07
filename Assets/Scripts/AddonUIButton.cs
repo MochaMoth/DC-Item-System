@@ -29,13 +29,22 @@ public class AddonUIButton : MonoBehaviour
         {
             if (follow.myItem != null)
             {
+                SynthSphere sphere = null;
+                try { sphere = (SynthSphere)follow.myItem; } catch(System.InvalidCastException) {  }
                 try
                 {
-                    myAddon = (Addon)follow.myItem;
-                    modifySlot.myItem.data.addons[myIndex] = myAddon.stats;
-                    follow.RemoveItem();
+                    if (sphere != null && myIndex != 0)
+                    {
+                        Debug.Log("Only slot 1 may have a SynthSphere.");
+                    }
+                    else
+                    {
+                        myAddon = (Addon)Instantiate(follow.myItem);
+                        modifySlot.myItem.data.addons[myIndex] = myAddon.stats;
+                        follow.RemoveItem();
+                    }
                 }
-                catch
+                catch (System.InvalidCastException)
                 {
                     Debug.Log("follow Item not an Addon");
                     return;

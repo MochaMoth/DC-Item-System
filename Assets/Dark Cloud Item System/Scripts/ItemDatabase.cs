@@ -20,14 +20,14 @@ public class ItemDatabase : ScriptableObject
         if (items.Count == 0)
             return ErrorItem(string.Format("Item Database does not have any items assigned to it. Returning empty item instead."));
 
-        return items[index];
+        return Instantiate(items[index]);
     }
 
     public Item GetItem(string itemName)
     {
         foreach (Item item in items)
             if (item.name == itemName)
-                return item;
+                return Instantiate(item);
 
         return ErrorItem(string.Format("Item '{0}' does not exist in this directory. Returning empty item instead.", itemName));
     }
